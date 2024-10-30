@@ -1,0 +1,59 @@
+<!-- Navbar section -->
+<mat-toolbar color="primary">
+  <span class="app-title">E-Commerce App</span>
+
+  <span class="spacer"></span>
+ <!-- Show Login and Register if the user is not logged in -->
+ <ng-container *ngIf="!isLoggedIn(); else loggedInTemplate">
+  <button mat-button routerLink="/login">Login</button>
+  <button mat-button routerLink="/register">Register</button>
+</ng-container>
+
+<!-- Show Logout if the user is logged in -->
+<ng-template #loggedInTemplate>
+  <button mat-button (click)="logout()">Logout</button>
+</ng-template>
+
+  <!-- Always show Cart button -->
+  <button mat-button routerLink="/cart" aria-label="Cart">
+    <mat-icon>shopping_cart</mat-icon> Cart
+  </button>
+</mat-toolbar>
+
+
+<!-- Product List Section -->
+<div class="product-container">
+    <div class="product-card" *ngFor="let product of products">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{getImage(product?.imageUrl)}} alt="{{ product.name }}">
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+          <p>Price: ${{ product.price }}</p>
+          <p>Product Quantity: {{ product.stockQuantity }}</p>
+        
+          <!-- Display if product is available or out of stock -->
+          <p *ngIf="!product.productAvailable">Out of Stock</p>
+        
+          <!-- Quantity controls with increment/decrement buttons -->
+          <div *ngIf="product.productAvailable">
+            <button (click)="decreaseQuantity(product)">-</button>
+            <span>{{ product.selectedQuantity || 1 }}</span>
+            <button (click)="increaseQuantity(product)">+</button>
+          </div>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          <button mat-button (click)="addToCart(product)">Add to Cart</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+<!-- Message if there are no products -->
+<ng-template #noProducts>
+  <h2>No products available</h2>
+  <p>Check back later!</p>
+</ng-template>

@@ -1,0 +1,35 @@
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .product-card {
+    width: 300px;
+  }
+  
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .spacer {
+    flex: 1 1 auto; /* This will push the buttons to the right */
+  }
+  
+  mat-toolbar {
+    display: flex;           /* Ensure toolbar is a flex container */
+    justify-content: space-between;
+  }
+  
+  .app-title {
+    font-size: 20px;         /* Style for your app title */
+    font-weight: bold;
+    color: white;
+  }
+  
+  button {
+    margin-right: 10px;      /* Add some margin to space out the buttons */
+  }
+  

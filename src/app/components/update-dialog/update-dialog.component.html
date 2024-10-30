@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Update Product</h2>
+<mat-dialog-content>
+  <form [formGroup]="productForm" enctype="multipart/form-data">
+    <!-- Product Name Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+
+    <!-- Description Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" required />
+    </mat-form-field>
+
+    <!-- Price Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" required type="number" />
+    </mat-form-field>
+
+    <!-- Available Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Available</mat-label>
+      <mat-select formControlName="productAvailable">
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Stock Quantity Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Stock Quantity</mat-label>
+      <input matInput formControlName="stockQuantity" required type="number" />
+    </mat-form-field>
+
+    <!-- Image Upload Field -->
+    <input type="file" (change)="onFileSelected($event)" />
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSubmit()" [disabled]="!productForm.valid">Update Product</button>
+</mat-dialog-actions>
