@@ -1,0 +1,33 @@
+.spacer {
+    flex: 1 1 auto; /* This allows the spacer to grow and push the button to the right */
+  }
+  .container {
+    max-width: 1200px; /* Limit the max width for better readability */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  h2 {
+    font-weight: bold; /* Make the heading bold */
+    color: #3f51b5; /* Primary color */
+  }
+  
+  .mat-card {
+    transition: box-shadow 0.3s ease; /* Add a transition effect */
+  }
+  
+  .mat-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  .confirmation-dialog {
+    background: #f9f9f9; /* Light background for the dialog */
+    border-top: 1px solid #ccc; /* Border for separation */
+    border-radius: 0 0 4px 4px; /* Round the bottom corners */
+  }
+  
+  .confirmation-dialog p {
+    margin-bottom: 1rem; /* Spacing for the message */
+  }
+  
+
+  

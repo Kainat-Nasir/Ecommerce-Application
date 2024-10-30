@@ -1,0 +1,23 @@
+.confirm-dialog-title {
+    text-align: center; /* Center the title */
+    color: #3f51b5; /* Primary color */
+  }
+  
+  .confirm-icon {
+    font-size: 48px; /* Larger icon size */
+    display: block; /* Center the icon */
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  .confirm-message {
+    text-align: center; /* Center the message */
+    margin-top: 10px; /* Space above the message */
+    margin-bottom: 20px; /* Space below the message */
+    font-size: 16px; /* Slightly larger font size */
+  }
+  
+  .confirm-dialog-actions {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+  }
+  

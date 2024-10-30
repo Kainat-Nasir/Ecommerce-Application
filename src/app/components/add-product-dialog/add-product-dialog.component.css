@@ -1,0 +1,26 @@
+.dialog-content {
+    padding: 20px;
+  }
+  
+  .product-form .full-width {
+    width: 100%;
+  }
+  
+  .product-form .half-width {
+    width: 48%;
+    margin-right: 2%;
+  }
+  
+  .file-upload {
+    margin-top: 15px;
+  }
+  
+  .file-upload label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  #file {
+    width: 100%;
+  }
+  

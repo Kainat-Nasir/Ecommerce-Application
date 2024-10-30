@@ -1,0 +1,26 @@
+<div class="container cart-container mt-5">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of cart">
+      <mat-card class="mb-4">
+        <mat-card-header>
+          <mat-card-title>{{ item.product.name }}</mat-card-title>  <!-- Access the product's name -->
+        </mat-card-header>
+
+        <!-- Product Image with fixed height and width -->
+        <img mat-card-image [src]="getImage(item.product.imageUrl)" class="img-fluid rounded" alt="{{ item.product.name }}" style="height: 200px; object-fit: cover; width: 100%;">
+
+        <!-- Product Details -->
+        <mat-card-content>
+          <p>{{ item.product.description }}</p>  <!-- Access the product's description -->
+          <p><strong>Price:</strong> ${{ item.product.price }}</p>
+          <p><strong>Quantity:</strong> {{ item.quantity }}</p>  <!-- Display quantity -->
+        </mat-card-content>
+
+        <!-- Remove Button -->
+        <mat-card-actions class="d-flex justify-content-between">
+          <button mat-button color="warn" (click)="removeFromCart(item.id)">Remove</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

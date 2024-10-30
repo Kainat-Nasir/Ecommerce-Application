@@ -1,0 +1,30 @@
+<!-- Navbar section -->
+<mat-toolbar color="primary">
+    <span class="app-title">E-Commerce App</span>
+
+    <button mat-button routerLink="/login" (click)="logout()">Logout</button>
+  </mat-toolbar>
+<div class="container mt-5">
+    <h2>Admin Panel</h2>
+    <button mat-button color="primary" (click)="AddDialog()">Add Product</button>
+  
+    <div class="row mt-3">
+      <div class="col-md-4" *ngFor="let product of products">
+        <mat-card class="mb-4">
+          <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="getImage(product.imageUrl)" class="img-fluid rounded" alt="{{ product.name }}">
+          <mat-card-content>
+            <p>{{ product.description }}</p>
+            <p><strong>Price:</strong> ${{ product.price }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="warn" (click)="UpdateDialog(product)">Update</button>
+            <button mat-button color="warn" (click)="openConfirmDialog(product.id)">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
